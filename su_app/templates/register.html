@@ -1,0 +1,29 @@
+{% extends 'login.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Регистрация{% endblock title %}</title>
+</head>
+<body>
+
+{% block one %}
+<div class="login-page">
+    <div class="form">
+      <form method="POST" class="login-form">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Имя пользователя"/>
+        <input type="email" name="email" placeholder="E-mail"/>
+        <input type="password" name="password" placeholder="Пароль"/>
+        <input type="password" name="password2" placeholder="Повторите пароль"/>
+        <button type="submit">Вход</button>
+        <p class="message"><a href="{% url 'home' %}">На главную</a></p>
+      </form>
+    </div>
+  </div>
+{% endblock one %}
+
+</body>
+</html>
